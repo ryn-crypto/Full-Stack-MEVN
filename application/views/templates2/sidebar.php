@@ -21,14 +21,14 @@
               <?php if( $m['menu_id'] == $sub['menu_id'] ) :?>
                 <?php if( $title == $sub['judul']) :?>
                   <li class="nav-item menu-open">
-                    <a href="<?= $sub['url'] ?>" class="nav-link active">
+                    <a href="<?= base_url($sub['url']) ?>" class="nav-link active">
                       <i class="nav-icon <?= $sub['icon'] ?>"></i>
                       <p><?= $sub['judul'] ?></p>
                     </a>
                   </li>
                 <?php else :?>
                   <li class="nav-item menu-open">
-                    <a href="<?= $sub['url'] ?>" class="nav-link">
+                    <a href="<?= base_url($sub['url']) ?>" class="nav-link">
                       <i class="nav-icon <?= $sub['icon'] ?>"></i>
                       <p><?= $sub['judul'] ?></p>
                     </a>

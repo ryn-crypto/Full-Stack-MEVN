@@ -9,4 +9,12 @@ class Profil extends CI_Model {
         $this->db->where('email', $data['email']);
 		$this->db->update('user', $data);
 	}
+
+	public function ubahpassword($data,$pasbaru)
+	{
+        $this->db->set($pasbaru);
+        $this->db->where($data);
+		$this->db->update('user');
+	}
+
 }

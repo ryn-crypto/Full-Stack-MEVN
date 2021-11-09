@@ -60,8 +60,8 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Ringkasan</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Edit profile</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="<?= base_url('user')?>">Ringkasan</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<?= base_url('user/edit') ?>">Edit profile</a></li>
                 </ul>
               </div>
               
@@ -75,7 +75,7 @@
                       </div>
                     </div>
                     <!-- ringkasan -->
-                        <div class="card-body pb-0">
+                      <div class="card-body pb-0">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch flex-column">
                             <div class="card border border-secondary bg-dark d-flex flex-fill">
@@ -124,69 +124,8 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
-                    
+                      </div>
                     <!-- /ringkasan -->
-                  </div>
-
-                  <div class="tab-pane" id="settings">
-                    <?= form_open_multipart('user');?>
-                      <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputEmail" name="email" value="<?= $user['email']; ?>" readonly>
-                        </div>
-                      </div>
-                      <div class="form-group row mt-3">
-                        <label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputNama" name="nama" value="<?= $user['nama']; ?>">
-                          <?= form_error('nama', '<small class="text-warning pl-1">', '</small>') ?>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $user['tempat_tinggal']; ?>">
-                          <?= form_error('alamat', '<small class="text-warning pl-1">', '</small>') ?>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="no_hp" class="col-sm-2 col-form-label">No Hp</label>
-                        <div class="col-sm-10">
-                          <input class="form-control" id="no_hp" name="no_hp" value="<?= $user['no_hp']; ?>">
-                          <?= form_error('no_hp', '<small class="text-warning pl-1">', '</small>') ?>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="catatan" class="col-sm-2 col-form-label">Catatan</label>
-                        <div class="col-sm-10">
-                          <textarea class="form-control" id="catatan" name="catatan"> <?= $user['tentang']; ?> </textarea>
-                          <?= form_error('catatan', '<small class="text-warning pl-1">', '</small>') ?>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-sm-2">Foto</div>
-                        <div class="col-sm-10">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <img src="<?= base_url('assets/images/profile/') . $user['gambar']; ?>" class="img-thumbnail">
-                                </div>
-                                <div class="col-sm-9">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="foto" name="gambar">
-                                        <label class="custom-file-label" for="foto">Pilih file</label>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="form-group row mt-4">
-                        <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-success">Ubah data</button>
-                        </div>
-                      </div>
-                    </form>
                   </div>
                   <!-- /.tab-pane -->
                 </div>

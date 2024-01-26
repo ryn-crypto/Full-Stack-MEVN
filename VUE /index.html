@@ -12,8 +12,41 @@
     />
   </head>
   <body>
-    <div class="container" id="app">
-      <div class="row d-flex mb-3 align-items-center" v-for="item in products">
+    <div class="container-fluid" id="app">
+      <div class="navbar navbar-light bg-light d-flex justify-content-end">
+        <div class="navbar-text">
+          <b>Chart:</b>
+          <span class="badge badge-pill badge-success bg-info mx-5"
+            >{{cart.length}}</span
+          >
+        </div>
+      </div>
+      <div class="col-10 form-inline mr-auto">
+        <div class="form-group">
+          <label for="maximum">Maximum Price</label>
+          <input
+            type="number"
+            class="form-control m-5"
+            id="maximum"
+            v-model="maximum"
+          />
+        </div>
+        <input
+          type="range"
+          class="custom-range"
+          min="0"
+          max="200"
+          v-model="maximum"
+        />
+      </div>
+      <div
+        class="row d-flex mb-3 align-items-center"
+        v-for="item in products"
+        v-if="item.price <= Number(maximum)"
+      >
+        <div class="col-1">
+          <button class="btn btn-success" v-on:click="addItem(item)">+</button>
+        </div>
         <div class="col-sm-4">
           <img v-bind:src="item.image" :alt="item.name" class="img-fluid" />
         </div>

@@ -10,6 +10,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container-fluid" id="app">
@@ -84,31 +85,35 @@
         </div>
         <div class="col-2">
           <!-- slider -->
-          <div
-            class="form-group d-flex justify-content-center m-4"
-            :class="sliderState"
-          >
-            <div class="row align-content-center">
-              <div class="col-12">
-                <label for="maximum">Maximum Price</label>
-                <input
-                  type="number"
-                  class="form-control my-2"
-                  id="maximum"
-                  v-model="maximum"
-                />
-              </div>
-              <div class="col-12 text-center">
-                <input
-                  type="range"
-                  class="custom-range col-10"
-                  min="0"
-                  max="200"
-                  v-model="maximum"
-                />
+          <transition name="fade">
+            <div v-if="style.sliderStatus">
+              <div
+                class="form-group justify-content-center m-4"
+                :class="sliderState"
+              >
+                <div class="row align-content-center">
+                  <div class="col-12">
+                    <label for="maximum">Maximum Price</label>
+                    <input
+                      type="number"
+                      class="form-control my-2"
+                      id="maximum"
+                      v-model="maximum"
+                    />
+                  </div>
+                  <div class="col-12 text-center">
+                    <input
+                      type="range"
+                      class="custom-range col-10"
+                      min="0"
+                      max="200"
+                      v-model="maximum"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </transition>
           <!-- slider End -->
         </div>
       </div>

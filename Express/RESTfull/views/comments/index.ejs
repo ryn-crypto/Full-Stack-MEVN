@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Of Comment</title>
+  </head>
+  <body>
+    <h2>this is page Comment</h2>
+    <a href="/comment/create">add comments</a>
+
+    <ul>
+      <% comments.forEach((comment) => { %>
+      <li>
+        <h3><%= comment.username %></h3>
+        <p><%= comment.textcomment %></p>
+        <span>
+          <a href="/comments/<%= comment.id %>">detail </a>
+          <a href="/comments/<%= comment.id %>/edit"> edit</a>
+          <form
+            action="/comments/<%= comment.id %>?_method=DELETE"
+            method="post"
+          >
+            <button>Delete</button>
+          </form>
+        </span>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

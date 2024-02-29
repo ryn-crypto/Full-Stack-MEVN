@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Detail products</title>
+  </head>
+  <body>
+    <h1>Product Detail</h1>
+    <h2><%= product.name %> - <%= product.brand %></h2>
+    <p>harga : Rp.<%= product.price %></p>
+    <p>
+      kategori :
+      <a href="/product?category=<%= product.category %>"
+        ><%= product.category %>
+      </a>
+    </p>
+    <p>Warna: <%= product.color %></p>
+    <a href="/product">Back to all products</a>
+    <a href="/product/<%= product._id %>/edit">Edit data</a>
+    <form action="/product/<%= product._id %>?_method=DELETE" method="post">
+      <button type="submit">Delete</button>
+    </form>
+  </body>
+</html>

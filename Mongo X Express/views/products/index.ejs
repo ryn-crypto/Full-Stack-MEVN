@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS product Page</title>
+  </head>
+  <body>
+    <h1><%= category %> Product</h1>
+    <% if(!category == 'All') { %>
+    <a href="/product">Show All</a>
+    <% } %>
+    <br />
+    <a href="/product/create">Add New Products</a>
+    <ul>
+      <% products.forEach((product) => { %>
+      <li>
+        <a href="/product/<%= product._id %>">
+          <%= product.name %> - <%= product.brand %>
+        </a>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

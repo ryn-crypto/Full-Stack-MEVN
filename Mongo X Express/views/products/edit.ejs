@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Data Products</title>
+  </head>
+  <body>
+    <h1>Edit Data</h1>
+    <p><%= product.category %></p>
+    <form action="/product/<%= product._id %>?_method=PUT" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="<%= product.name %>" />
+      <label for="brand">Brand</label>
+      <input type="text" name="brand" id="" value="<%= product.brand %>" />
+      <label for="color">Color</label>
+      <input type="text" name="color" id="color" value="<%= product.color %>" />
+      <label for="price">Price</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        value="<%= product.price %>"
+      />
+      <label for="category">Category</label>
+      <select name="category" id="category">
+        <option
+          value="Baju"
+          <%= product.category == 'Baju' ? 'selected': '' %>
+        >
+          Baju
+        </option>
+        <option
+          value="Celana"
+          <%= product.category == 'Celana' ? 'selected': '' %>
+        >
+          Celana
+        </option>
+        <option
+          value="Sepatu"
+          <%= product.category == 'Sepatu' ? 'selected': '' %>
+        >
+          Sepatu
+        </option>
+        <option
+          value="Tas"
+          <%= product.category == 'Tas' ? 'selected': '' %>
+        >
+          Tas
+        </option>
+        <option
+          value="Aksesoris"
+          <%= product.category == 'Aksesoris' ? 'selected': '' %>
+        >
+          Aksesoris
+        </option>
+        <option
+          value="Lainnya"
+          <%= product.category == 'Lainnya' ? 'selected': '' %>
+        >
+          Lainnya
+        </option>
+      </select>
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>
